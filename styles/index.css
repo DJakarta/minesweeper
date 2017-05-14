@@ -1,0 +1,84 @@
+* {
+padding: 0px;
+margin: 0px;
+font-family: "Courier New";
+}
+
+html {
+height: 100%;
+width: 100%;
+display: table;
+}
+
+body {
+display: table-cell;
+vertical-align: middle;
+}
+
+tr {
+}
+
+td {
+height: 14px;
+width: 14px;
+background-color: rgba(255,255,255,0.5);
+}
+
+.tr {
+width: auto;
+height: 16px;
+}
+
+.td {
+width: 16px;
+height: 16px;
+margin: 0px;
+background-image: url('../imgs/bg/unpressed.png');
+display: inline-block;
+}
+
+#game {
+top: 0px;
+margin-left: auto;
+margin-right: auto;
+padding: 6px;
+display: table;
+background-color: rgba(192,192,192,1);
+}
+
+#cellDiv {
+margin-left: auto;
+margin-right: auto;
+-moz-border-image: url('../imgs/bg/border3px.png') 3 3 3 repeat;
+-webkit-border-image: url('../imgs/bg/border3px.png') 3 3 3 repeat;
+-o-border-image: url('../imgs/bg/border3px.png') 3 3 3 repeat;
+background-color: rgba(144,144,144,1);
+}
+
+#controlls {
+height: 72px;
+}
+
+#menu {
+height: 25px;
+}
+
+#stats {
+height: 33px;
+border-style: inset;
+border-width: 2px;
+border-color: #ffffff;
+-moz-border-image: url('../imgs/bg/border2px.png') 2 2 2 repeat;
+-webkit-border-image: url('../imgs/bg/border2px.png') 2 2 2 repeat;
+-o-border-image: url('../imgs/bg/border2px.png') 2 2 2 repeat;
+}
+
+#reset {
+width: 26px;
+height: 26px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 4px;
+background-repeat: no-repeat;
+background-image: url('../imgs/bg/normal.png');
+}

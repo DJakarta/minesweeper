@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Mineseeper Documentation</title>
+		<link rel="stylesheet" href="styles/docs.css" />
+		<script type="text/javascript" src="scripts/jquery.js"></script>
+		<script type="text/javascript" src="scripts/kLib.js" id="script"></script>
+		<meta charset="UTF-8" />
+	</head>
+	
+	<body>
+		<section unselectable="on" class="header">
+			<header id="pageTitle" unselectable="on" class="header">
+				Mineseeper Documentation
+				<div unselectable="on" class="header"> 
+					<span unselectable="on" class="header">
+						*work in progress
+					</span>
+				</div>
+			</header>
+		</section>
+		
+		<section id="articleSection">
+			<article>
+				<h1>
+					Game Coding
+				</h1>
+				<article>
+					<h2>
+						Matrix
+					</h2>
+					<article>
+						<h3>
+							Tile representation
+						</h3>
+						The following types of tiles are available:
+						<table>
+							<tr>
+								<th>
+									Representation
+								</th>
+								<th>
+									Image used
+								</th>
+								<th>
+									Meaning
+								</th>
+							</tr>
+							<tr>
+								<td>
+									0
+								</td>
+								<td>
+									<img src="imgs/bg/unpressed.png" />
+								</td>
+								<td>
+									Unpressed cell, no mine
+								</td>
+							</tr>
+							<tr>
+								<td>
+									1
+								</td>
+								<td>
+									<img src="imgs/bg/unpressed.png" />
+								</td>
+								<td>
+									Unpressed cell, mine
+								</td>
+							</tr>
+							<tr>
+								<td>
+									2
+								</td>
+								<td>
+									<img src="imgs/bg/empty.png" />
+								</td>
+								<td>
+									Pressed cell, no mine
+								</td>
+							</tr>
+							<tr>
+								<td>
+									3
+								</td>
+								<td>
+									<img src="imgs/bg/flag.png" />
+								</td>
+								<td>
+									Flagged cell, no mine
+								</td>
+							</tr>
+							<tr>
+								<td>
+									4
+								</td>
+								<td>
+									<img src="imgs/bg/flag.png" />
+								</td>
+								<td>
+									Flagged cell, mine
+								</td>
+							</tr>
+							<tr>
+								<td>
+									5
+								</td>
+								<td>
+									<img src="imgs/bg/hitmine.png" />
+								</td>
+								<td>
+									Hit mine
+								</td>
+							</tr>
+						</table>
+						<code class="block">
+							if (ev.type=="mousedown" && ev.button==2) {
+								i=parseInt(this.id.slice(0,3),10);
+								j=parseInt(this.id.slice(4,7),10);
+								game.flagCell(i, j);
+								game.clicks++;
+							}
+							else if (game.pressedCell) {
+								i=parseInt(this.id.slice(0,3),10);
+								j=parseInt(this.id.slice(4,7),10);
+								if (game.cells[i][j]==1) {
+									game.cells[i][j]=5;
+									this.style.backgroundImage="url('imgs/bg/hitmine.png')";
+									game.clicks++;
+									game.end();
+								}
+								else if (game.cells[i][j]==0) {
+									game.clicks++;
+									game.revealCells(i, j);
+									if (game.checkForWin()) {
+										game.win();
+									}
+								}
+							}
+						</code>
+					</article>
+				</article>
+			</article>			
+		</section>		
+		<script type="text/javascript" src="scripts/docs.js" id="script"></script>
+	</body>
+</html>
