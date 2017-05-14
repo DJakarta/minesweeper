@@ -1,6 +1,4 @@
 # Minesweeper
-Classic Minesweeper clone.  
-
 Clone of the great Windows classic, Minesweeper.
 
 Includes a "cheating" mode. See if you cand find it.  
